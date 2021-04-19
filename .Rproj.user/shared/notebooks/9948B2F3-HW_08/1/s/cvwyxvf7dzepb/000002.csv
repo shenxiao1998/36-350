@@ -1,0 +1,3 @@
+"0","f = function(letter) {"
+"0","  return(log(which(letters==letter)))"
+"0","}"

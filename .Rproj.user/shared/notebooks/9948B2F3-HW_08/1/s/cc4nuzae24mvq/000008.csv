@@ -1,0 +1,45 @@
+"0","if ( require(""testthat"") == FALSE ) {"
+"0","  install.packages(""testthat"",repos=""https://cloud.r-project.org"")"
+"0","  library(testthat)"
+"0","}"
+"0",""
+"0","test_that(desc = ""Test for improper input (numeric)"",       expect_error(f(1)))"
+"1","[32mTest passed[39m 🎊"
+"1",""
+"1","
+"
+"0","test_that(desc = ""Test for improper input (symbol)"",       expect_error(f(""%"")))"
+"1","[32mTest passed[39m 🥇"
+"1",""
+"1","
+"
+"0","test_that(desc = ""Test for propoer input (a)"",       expect_equal(f(""a""),0))"
+"1","── [1m[33mError[39m (Line 3): Test for propoer input (a)[22m ──────────────────────────────────
+Error: The input must be a single letter character
+[1mBacktrace:[22m
+[90m 1. [39mtestthat::expect_equal(f(""a""), 0)
+[90m 4. [39mglobal::f(""a"")
+"
+"1",""
+"1","
+"
+"0","test_that(desc = ""Test for proper input (B)"",       expect_equal(f(""B""),log(2)))"
+"1","── [1m[33mError[39m (Line 3): Test for proper input (B)[22m ───────────────────────────────────
+Error: The input must be a single letter character
+[1mBacktrace:[22m
+[90m 1. [39mtestthat::expect_equal(f(""B""), log(2))
+[90m 4. [39mglobal::f(""B"")
+"
+"1",""
+"1","
+"
+"0","test_that(desc = ""Test for proper input (Multiple character)"",       expect_warning(f(c(""B u""))))"
+"1","── [1m[33mError[39m (Line 3): Test for proper input (Multiple character)[22m ─────────────────────
+Error: The input must be a single letter character
+[1mBacktrace:[22m
+[90m 1. [39mtestthat::expect_warning(f(c(""B u"")))
+[90m 6. [39mglobal::f(c(""B u""))
+"
+"1",""
+"1","
+"
